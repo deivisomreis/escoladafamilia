@@ -1,5 +1,6 @@
 package com.escolafamilia.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -23,7 +24,7 @@ public class Admin {
 	
 	private String telefone;
 	
-	@OneToOne(fetch=FetchType.LAZY)
+	@OneToOne(cascade = CascadeType.ALL)
 	private Endereco endereco;
 
 	public Integer getId() {
@@ -57,5 +58,11 @@ public class Admin {
 
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
+	}
+	public Endereco getEndereco() {
+		return endereco;
+	}
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
 	}
 }

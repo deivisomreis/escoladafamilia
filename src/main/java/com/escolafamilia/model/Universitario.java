@@ -2,10 +2,10 @@ package com.escolafamilia.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -27,13 +27,13 @@ public class Universitario {
 	@Column(length=10)
 	private String senha;
 	
-	@OneToOne(fetch=FetchType.LAZY)
+	@OneToOne(cascade = CascadeType.ALL)
 	private Endereco endereco;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Curso curso;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Projeto projeto;
 
 	public Integer getId() {
