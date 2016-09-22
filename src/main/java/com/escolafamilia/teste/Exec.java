@@ -17,7 +17,7 @@ public class Exec {
 		SimpleDateFormat sdfIn = new SimpleDateFormat("yyyy/MM/dd");
 		SimpleDateFormat sdfOut = new SimpleDateFormat("dd/MM/yyyy");
 		
-		for(int i = 0; i < 1000000; i++){
+		for(int i = 0; i < 10; i++){
 			Evento evento = new Evento();
 			evento.setAgePerson(26);
 			evento.setNamePerson("Deivison Reis" + " - " + i);
